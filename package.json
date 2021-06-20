@@ -1,6 +1,6 @@
 {
   "name": "@solariera/native-style",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "Style functions for ReactNative",
   "main": "./dist/index.js",
@@ -34,12 +34,10 @@
   },
   "homepage": "https://github.com/solariera/native-style#readme",
   "dependencies": {
-    "react": "^17.0.2",
     "styled-components": "^5.3.0",
     "@solariera/rgba-model": "github:solariera/rgba-model"
   },
   "peerDependencies": {
-    "react": ">=17.0.2",
     "styled-components": ">=5.3.0"
   },
   "devDependencies": {

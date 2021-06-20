@@ -1,6 +1,5 @@
-import { css } from 'styled-components/native';
-
-import { getCssRGBA } from '../../props/getCssRGBA';
+import { getRGBA } from '@solariera/rgba-model/src';
+import { css } from '../../css';
 
 type ColorType = {
   bgColor?: string;
@@ -12,7 +11,7 @@ const colorStyle = (props: ColorType) => {
 
   if (bgColor === undefined) return css``;
 
-  const bgColorRgba: string = getCssRGBA(bgColor, bgColorAlpha);
+  const bgColorRgba: string = getRGBA(bgColor, bgColorAlpha);
 
   const styleString = css`
     background-color: ${bgColorRgba};

@@ -1,4 +1,4 @@
-import { css } from 'styled-components/native';
+import { css } from '../../css';
 
 type FontFamilyType = {
   family?: string;

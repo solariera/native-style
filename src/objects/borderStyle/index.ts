@@ -1,7 +1,23 @@
-import { css } from 'styled-components/native';
-
 import { getRGBA } from '@solariera/rgba-model/src';
-import { getBorderStyle } from '../../props/getBorderStyle';
+import { css } from '../../css';
+
+type BorderStyleType = 'solid' | 'dotted' | 'dashed';
+
+const getBorderStyle = (type?: string): BorderStyleType => {
+  switch (type) {
+    case 'solid':
+      return 'solid' as const;
+
+    case 'dotted':
+      return 'dotted' as const;
+
+    case 'dashed':
+      return 'dashed' as const;
+
+    default:
+      return 'solid' as const;
+  }
+};
 
 type BorderType = {
   width?: number;

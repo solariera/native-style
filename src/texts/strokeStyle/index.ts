@@ -1,5 +1,5 @@
-import { css } from 'styled-components/native';
 import { getRGBA } from '@solariera/rgba-model/src';
+import { css } from '../../css';
 
 type StrokeType = {
   width?: number;
