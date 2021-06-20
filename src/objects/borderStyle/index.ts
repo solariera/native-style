@@ -1,6 +1,6 @@
 import { css } from 'styled-components/native';
 
-import { getCssRGBA } from '../../props/getCssRGBA';
+import { getRGBA } from '@solariera/rgba-model/src';
 import { getBorderStyle } from '../../props/getBorderStyle';
 
 type BorderType = {
@@ -20,19 +20,19 @@ const borderStyle = (props: BorderType) => {
 
   if (!width || !color) return css``;
 
-  const colorRgba: string = getCssRGBA(color, alpha);
+  const rgba: string = getRGBA(color, alpha);
 
   const borderStyle: string = getBorderStyle(type);
 
   const styleString = [leftEnable, rightEnable, topEnable, bottomEnable].some((enable) => enable)
     ? css`
-        border: ${width + unit} ${borderStyle} ${colorRgba};
+        border: ${width + unit} ${borderStyle} ${rgba};
       `
     : css`
-        ${leftEnable && `border-left: ${width + unit} ${borderStyle} ${colorRgba};`}
-        ${rightEnable && `border-right: ${width + unit} ${borderStyle} ${colorRgba};`}
-        ${topEnable && `border-top: ${width + unit} ${borderStyle} ${colorRgba};`}
-        ${bottomEnable && `border-bottom: ${width + unit} ${borderStyle} ${colorRgba};`}
+        ${leftEnable && `border-left: ${width + unit} ${borderStyle} ${rgba};`}
+        ${rightEnable && `border-right: ${width + unit} ${borderStyle} ${rgba};`}
+        ${topEnable && `border-top: ${width + unit} ${borderStyle} ${rgba};`}
+        ${bottomEnable && `border-bottom: ${width + unit} ${borderStyle} ${rgba};`}
       `;
 
   return styleString;

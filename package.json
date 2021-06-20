@@ -1,6 +1,6 @@
 {
   "name": "@solariera/native-style",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "Style functions for ReactNative",
   "main": "./dist/index.js",
