@@ -1,10 +1,7 @@
-import { ColorValuesType } from '@color/rgb';
 import { getColorValue } from './getColorValue';
 
-/**
- * getColorValues
- * @param code
- */
+type ColorValuesType = { red: number; green: number; blue: number; alpha?: number };
+
 const getColorValues = (code: string, alpha?: number): ColorValuesType => {
   // 各色の対象カラム番号と総カラム数
   const RED: number = 0;

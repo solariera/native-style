@@ -1,4 +1,4 @@
-import { css } from '../../configs/css-in-js';
+import { css } from 'styled-components/native';
 
 import { getCssRGBA } from '../../props/getCssRGBA';
 import { getBorderStyle } from '../../props/getBorderStyle';

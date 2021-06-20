@@ -1,4 +1,4 @@
-import { css } from '../../configs/css-in-js';
+import { css } from 'styled-components/native';
 
 type SizeType = {
   width?: number;

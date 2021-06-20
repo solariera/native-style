@@ -1578,6 +1578,12 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@solariera/rgba-model@github:solariera/rgba-model":
+  version "0.0.1"
+  resolved "https://codeload.github.com/solariera/rgba-model/tar.gz/2f9377b9ebc2f876df4bfe7bbd863cbf55416101"
+  dependencies:
+    react "^17.0.2"
+
 "@stylelint/postcss-css-in-js@^0.37.2":
   version "0.37.2"
   resolved "https://registry.yarnpkg.com/@stylelint/postcss-css-in-js/-/postcss-css-in-js-0.37.2.tgz#7e5a84ad181f4234a2480803422a47b8749af3d2"
