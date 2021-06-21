@@ -1,11 +1,11 @@
 import { css } from '../../css';
 
-type SpacingType = {
+type LetterSpacingType = {
   letterSpacing?: number;
   unit?: string;
 };
 
-const spacingStyle = (props: SpacingType) => {
+const letterSpacingStyle = (props: LetterSpacingType) => {
   const { letterSpacing, unit = 'px' } = props;
 
   const styleString = css`
@@ -15,4 +15,4 @@ const spacingStyle = (props: SpacingType) => {
   return styleString;
 };
 
-export { spacingStyle };
+export { letterSpacingStyle };

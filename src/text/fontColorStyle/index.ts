@@ -2,8 +2,8 @@ import { getRGBA } from '@solariera/rgba-model/src';
 import { css } from '../../css';
 
 type FontColorType = {
-  fontColor: string;
-  fontColorAlpha: number;
+  fontColor?: string;
+  fontColorAlpha?: number;
 };
 
 const fontColorStyle = (props: FontColorType) => {
