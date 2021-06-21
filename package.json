@@ -15,7 +15,7 @@
     "css"
   ],
   "scripts": {
-    "clean": "rimraf dist && mkdirp dist",
+    "clean": "rm -rf dist",
     "typesync": "typesync || :",
     "build": "npm run clean && tsc",
     "prepare": "npm run build"
