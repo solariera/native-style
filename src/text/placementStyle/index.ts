@@ -2,16 +2,16 @@ import { css } from '../../css';
 
 type PlacementType = {
   height?: number;
-  align?: string;
+  textAlign?: string;
   unit?: string;
 };
 
 const placementStyle = (props: PlacementType) => {
-  const { height, align = 'left', unit = 'px' } = props;
+  const { height, textAlign = 'left', unit = 'px' } = props;
 
   const styleString = css`
     ${height !== undefined ? `line-height: ${height + unit};` : ``}
-    text-align: ${align};
+    text-align: ${textAlign};
   `;
 
   return styleString;

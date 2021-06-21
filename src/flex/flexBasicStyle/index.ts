@@ -40,31 +40,31 @@ const getFlexWrap = (wrap?: string): FlexWrapType | undefined => {
 };
 
 type FlexBasicType = {
-  direction?: string;
-  wrap?: string;
-  display?: string;
+  flexDirection?: string;
+  flexWrap?: string;
+  styleDisplay?: string;
 };
 
 const flexBasicStyle = (props: FlexBasicType) => {
-  const { direction, wrap, display = 'flex' } = props;
+  const { flexDirection, flexWrap, styleDisplay = 'flex' } = props;
 
   // directionとwrapが存在しなければ何もしない
-  if (!direction && !wrap) return css``;
+  if (!flexDirection && !flexWrap) return css``;
 
   /**
    * flex-directionの値
    */
-  const flexDirection = getFlexDirection(direction);
+  const direction = getFlexDirection(flexDirection);
 
   /**
    * flex-wrapの値
    */
-  const flexWrap = getFlexWrap(wrap);
+  const wrap = getFlexWrap(flexWrap);
 
   const styleString = css`
-    ${display !== undefined ? `display: ${display};` : ``}
-    ${flexDirection !== undefined ? `flex-direction: ${flexDirection};` : ``}
-    ${flexWrap !== undefined ? `flex-wrap: ${flexWrap};` : ``}
+    ${styleDisplay !== undefined ? `display: ${styleDisplay};` : ``}
+    ${direction !== undefined ? `flex-direction: ${direction};` : ``}
+    ${wrap !== undefined ? `flex-wrap: ${wrap};` : ``}
   `;
 
   return styleString;

@@ -1,21 +1,21 @@
 import { css } from '../../css';
 
 type MarginType = {
-  left?: number;
-  right?: number;
-  top?: number;
-  bottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  marginTop?: number;
+  marginBottom?: number;
   unit?: string;
 };
 
 const marginStyle = (props: MarginType) => {
-  const { left, right, top, bottom, unit = 'px' } = props;
+  const { marginLeft, marginRight, marginTop, marginBottom, unit = 'px' } = props;
 
   const styleString = css`
-    ${left !== undefined && `margin-left: ${left + unit};`}
-    ${right !== undefined && `margin-right: ${right + unit};`}
-    ${top !== undefined && `margin-top: ${top + unit};`}
-    ${bottom !== undefined && `margin-bottom: ${bottom + unit};`}
+    ${marginLeft !== undefined && `margin-left: ${marginLeft + unit};`}
+    ${marginRight !== undefined && `margin-right: ${marginRight + unit};`}
+    ${marginTop !== undefined && `margin-top: ${marginTop + unit};`}
+    ${marginBottom !== undefined && `margin-bottom: ${marginBottom + unit};`}
   `;
 
   return styleString;

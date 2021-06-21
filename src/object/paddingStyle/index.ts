@@ -1,21 +1,21 @@
 import { css } from '../../css';
 
 type PaddingType = {
-  left?: number;
-  right?: number;
-  top?: number;
-  bottom?: number;
+  paddingLeft?: number;
+  paddingRight?: number;
+  paddingTop?: number;
+  paddingBottom?: number;
   unit?: string;
 };
 
 const paddingStyle = (props: PaddingType) => {
-  const { left, right, top, bottom, unit = 'px' } = props;
+  const { paddingLeft, paddingRight, paddingTop, paddingBottom, unit = 'px' } = props;
 
   const styleString = css`
-    ${left !== undefined && `padding-left: ${left + unit};`}
-    ${right !== undefined && `padding-right: ${right + unit};`}
-    ${top !== undefined && `padding-top: ${top + unit};`}
-    ${bottom !== undefined && `padding-bottom: ${bottom + unit};`}
+    ${paddingLeft !== undefined && `padding-left: ${paddingLeft + unit};`}
+    ${paddingRight !== undefined && `padding-right: ${paddingRight + unit};`}
+    ${paddingTop !== undefined && `padding-top: ${paddingTop + unit};`}
+    ${paddingBottom !== undefined && `padding-bottom: ${paddingBottom + unit};`}
   `;
 
   return styleString;

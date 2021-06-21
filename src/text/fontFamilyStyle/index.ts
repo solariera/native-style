@@ -1,16 +1,16 @@
 import { css } from '../../css';
 
 type FontFamilyType = {
-  family?: string;
-  style?: string;
+  fontFamily?: string;
+  fontStyle?: string;
 };
 
 const fontFamilyStyle = (props: FontFamilyType) => {
-  const { family = 'Ubuntu', style = 'normal' } = props;
+  const { fontFamily = 'Ubuntu', fontStyle = 'normal' } = props;
 
   const styleString = css`
-    font-family: ${family};
-    font-style: ${style};
+    font-family: ${fontFamily};
+    font-style: ${fontStyle};
   `;
 
   return styleString;

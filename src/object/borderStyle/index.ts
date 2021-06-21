@@ -20,35 +20,37 @@ const getBorderStyle = (type?: string): BorderStyleType => {
 };
 
 type BorderType = {
-  width?: number;
-  color?: string;
-  alpha?: number;
-  type?: string;
-  leftEnable?: boolean;
-  rightEnable?: boolean;
-  topEnable?: boolean;
-  bottomEnable?: boolean;
+  borderWidth?: number;
+  borderColor?: string;
+  borderColorAlpha?: number;
+  borderStyle?: string;
+  borderLeft?: boolean;
+  borderRight?: boolean;
+  borderTop?: boolean;
+  borderBottom?: boolean;
   unit?: string;
 };
 
 const borderStyle = (props: BorderType) => {
-  const { width = 0, color, alpha, type, leftEnable, rightEnable, topEnable, bottomEnable, unit = 'px' } = props;
+  const { borderColor, borderColorAlpha, borderStyle } = props;
+  const { borderLeft, borderRight, borderTop, borderBottom } = props;
+  const { borderWidth = 0, unit = 'px' } = props;
 
-  if (!width || !color) return css``;
+  if (!borderWidth || !borderColor) return css``;
 
-  const rgba: string = getRGBA(color, alpha);
+  const rgba: string = getRGBA(borderColor, borderColorAlpha);
 
-  const borderStyle: string = getBorderStyle(type);
+  const type: string = getBorderStyle(borderStyle);
 
-  const styleString = [leftEnable, rightEnable, topEnable, bottomEnable].some((enable) => enable)
+  const styleString = [borderLeft, borderRight, borderTop, borderBottom].some((enable) => enable)
     ? css`
-        border: ${width + unit} ${borderStyle} ${rgba};
+        border: ${borderWidth + unit} ${borderStyle} ${rgba};
       `
     : css`
-        ${leftEnable && `border-left: ${width + unit} ${borderStyle} ${rgba};`}
-        ${rightEnable && `border-right: ${width + unit} ${borderStyle} ${rgba};`}
-        ${topEnable && `border-top: ${width + unit} ${borderStyle} ${rgba};`}
-        ${bottomEnable && `border-bottom: ${width + unit} ${borderStyle} ${rgba};`}
+        ${borderLeft && `border-left: ${borderWidth + unit} ${borderStyle} ${rgba};`}
+        ${borderRight && `border-right: ${borderWidth + unit} ${borderStyle} ${rgba};`}
+        ${borderTop && `border-top: ${borderWidth + unit} ${type} ${rgba};`}
+        ${borderBottom && `border-bottom: ${borderWidth + unit} ${borderStyle} ${rgba};`}
       `;
 
   return styleString;

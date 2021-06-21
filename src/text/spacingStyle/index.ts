@@ -1,15 +1,15 @@
 import { css } from '../../css';
 
 type SpacingType = {
-  spacing?: number;
+  letterSpacing?: number;
   unit?: string;
 };
 
 const spacingStyle = (props: SpacingType) => {
-  const { spacing, unit = 'px' } = props;
+  const { letterSpacing, unit = 'px' } = props;
 
   const styleString = css`
-    ${spacing !== undefined ? `letter-spacing: ${spacing + unit};` : ``}
+    ${letterSpacing !== undefined ? `letter-spacing: ${letterSpacing + unit};` : ``}
   `;
 
   return styleString;

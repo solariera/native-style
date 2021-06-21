@@ -82,9 +82,9 @@ const getJustifyContent = (justify?: string): JustifyContentType | undefined => 
 };
 
 type FlexContainerType = {
-  justify?: string;
-  align?: string;
-  items?: string;
+  justifyContent?: string;
+  alignContent?: string;
+  alignItems?: string;
 };
 
 /**
@@ -95,27 +95,27 @@ type FlexContainerType = {
  * @param items itemsの縦方向の整列を指定
  */
 const flexContainerStyle = (props: FlexContainerType) => {
-  const { justify, align, items } = props;
+  const { justifyContent, alignContent, alignItems } = props;
 
   /**
    * justify-contentの値
    */
-  const justifyContent = getJustifyContent(justify);
+  const justify = getJustifyContent(justifyContent);
 
   /**
    * align-contentの値
    */
-  const alignContent = getAlignContent(align);
+  const align = getAlignContent(alignContent);
 
   /**
    * align-items
    */
-  const alignItems = getAlignItems(items);
+  const items = getAlignItems(alignItems);
 
   const styleString = css`
-    ${justifyContent !== undefined ? `justify-content: ${justifyContent};` : ``}
-    ${alignContent !== undefined ? `align-content: ${alignContent};` : ``}
-    ${alignItems !== undefined ? `align-items: ${alignItems};` : ``}
+    ${justify !== undefined ? `justify-content: ${justify};` : ``}
+    ${align !== undefined ? `align-content: ${align};` : ``}
+    ${items !== undefined ? `align-items: ${items};` : ``}
   `;
 
   return styleString;

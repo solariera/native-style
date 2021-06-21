@@ -2,17 +2,17 @@ import { getRGBA } from '@solariera/rgba-model/src';
 import { css } from '../../css';
 
 type FontColorType = {
-  color: string;
-  alpha: number;
+  fontColor: string;
+  fontColorAlpha: number;
 };
 
 const fontColorStyle = (props: FontColorType) => {
-  const { color = '#000000', alpha = 1 } = props;
+  const { fontColor = '#000000', fontColorAlpha = 1 } = props;
 
   /**
    * フォントカラーのrgba形式
    */
-  const rgba: string = getRGBA(color, alpha);
+  const rgba: string = getRGBA(fontColor, fontColorAlpha);
 
   const styleString = css`
     color: ${rgba};

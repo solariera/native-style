@@ -3,7 +3,7 @@ import { css } from '../../css';
 
 type ColorType = {
   bgColor?: string;
-  bgColorAlpha: number;
+  bgColorAlpha?: number;
 };
 
 const colorStyle = (props: ColorType) => {
