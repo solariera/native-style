@@ -1,4 +1,4 @@
-import { getRGBA } from '@solariera/rgba-model/src';
+import { rgba } from '@solariera/rgba-syntax';
 import { css } from '../../css';
 
 type BorderStyleType = 'solid' | 'dotted' | 'dashed';
@@ -38,19 +38,19 @@ const borderStyle = (props: BorderType) => {
 
   if (!borderWidth || !borderColor) return css``;
 
-  const rgba: string = getRGBA(borderColor, borderColorAlpha);
+  const rgbaSyntax: string = rgba(borderColor, borderColorAlpha);
 
   const type: string = getBorderStyle(borderStyle);
 
   const styleString = [borderLeft, borderRight, borderTop, borderBottom].some((enable) => enable)
     ? css`
-        border: ${borderWidth + unit} ${borderStyle} ${rgba};
+        border: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};
       `
     : css`
-        ${borderLeft && `border-left: ${borderWidth + unit} ${borderStyle} ${rgba};`}
-        ${borderRight && `border-right: ${borderWidth + unit} ${borderStyle} ${rgba};`}
+        ${borderLeft && `border-left: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
+        ${borderRight && `border-right: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
         ${borderTop && `border-top: ${borderWidth + unit} ${type} ${rgba};`}
-        ${borderBottom && `border-bottom: ${borderWidth + unit} ${borderStyle} ${rgba};`}
+        ${borderBottom && `border-bottom: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
       `;
 
   return styleString;

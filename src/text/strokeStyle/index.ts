@@ -1,4 +1,4 @@
-import { getRGBA } from '@solariera/rgba-model/src';
+import { rgba } from '@solariera/rgba-syntax';
 import { css } from '../../css';
 
 type StrokeType = {
@@ -13,7 +13,7 @@ const strokeStyle = (props: StrokeType) => {
   /**
    * ストロークカラーのrgba形式
    */
-  const textStrokeColor: string | undefined = strokeColor && getRGBA(strokeColor, strokeColorAlpha);
+  const textStrokeColor: string | undefined = strokeColor && rgba(strokeColor, strokeColorAlpha);
 
   const styleString = css`
     ${strokeWidth !== undefined ? `text-stroke-width: ${strokeWidth};` : ``}

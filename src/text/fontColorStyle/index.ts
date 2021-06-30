@@ -1,4 +1,4 @@
-import { getRGBA } from '@solariera/rgba-model/src';
+import { rgba } from '@solariera/rgba-syntax';
 import { css } from '../../css';
 
 type FontColorType = {
@@ -12,10 +12,10 @@ const fontColorStyle = (props: FontColorType) => {
   /**
    * フォントカラーのrgba形式
    */
-  const rgba: string = getRGBA(fontColor, fontColorAlpha);
+  const rgbaSyntax: string = rgba(fontColor, fontColorAlpha);
 
   const styleString = css`
-    color: ${rgba};
+    color: ${rgbaSyntax};
   `;
 
   return styleString;

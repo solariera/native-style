@@ -1,4 +1,4 @@
-import { getRGBA } from '@solariera/rgba-model/src';
+import { rgba } from '@solariera/rgba-syntax';
 import { css } from '../../css';
 
 type ColorType = {
@@ -11,7 +11,7 @@ const colorStyle = (props: ColorType) => {
 
   if (bgColor === undefined) return css``;
 
-  const bgColorRgba: string = getRGBA(bgColor, bgColorAlpha);
+  const bgColorRgba: string = rgba(bgColor, bgColorAlpha);
 
   const styleString = css`
     background-color: ${bgColorRgba};
