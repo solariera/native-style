@@ -1,4 +1,4 @@
-import { css } from '../../css';
+import { css } from '~/css';
 
 type ImagePositionType = {
   x?: number;

@@ -1,4 +1,4 @@
-import { css } from '../../css';
+import { css } from '~/css';
 
 type AlignContentType = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'stretch';
 

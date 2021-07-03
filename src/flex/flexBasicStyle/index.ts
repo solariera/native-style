@@ -1,4 +1,4 @@
-import { css } from '../../css';
+import { css } from '~/css';
 
 type FlexDirectionType = 'row' | 'row-reverse' | 'column' | 'column-reverse';
 
@@ -45,7 +45,7 @@ type FlexBasicType = {
   styleDisplay?: string;
 };
 
-const flexBasicStyle = (props: FlexBasicType) => {
+export const flexBasicStyle = (props: FlexBasicType) => {
   const { flexDirection, flexWrap, styleDisplay = 'flex' } = props;
 
   // directionとwrapが存在しなければ何もしない
@@ -69,5 +69,3 @@ const flexBasicStyle = (props: FlexBasicType) => {
 
   return styleString;
 };
-
-export { flexBasicStyle };

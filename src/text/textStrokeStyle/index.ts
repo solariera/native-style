@@ -1,5 +1,5 @@
 import { rgba } from '@solariera/rgba-syntax';
-import { css } from '../../css';
+import { css } from '~/css';
 
 type StrokeType = {
   strokeWidth?: number;
@@ -7,7 +7,7 @@ type StrokeType = {
   strokeColorAlpha?: number;
 };
 
-const strokeStyle = (props: StrokeType) => {
+const textStrokeStyle = (props: StrokeType) => {
   const { strokeWidth, strokeColor, strokeColorAlpha } = props;
 
   /**
@@ -23,4 +23,4 @@ const strokeStyle = (props: StrokeType) => {
   return styleString;
 };
 
-export { strokeStyle };
+export { textStrokeStyle };
