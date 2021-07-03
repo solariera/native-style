@@ -8,7 +8,7 @@ type MarginType = {
   unit?: string;
 };
 
-const marginStyle = (props: MarginType) => {
+export const marginStyle = (props: MarginType) => {
   const { marginLeft, marginRight, marginTop, marginBottom, unit = 'px' } = props;
 
   const styleString = css`
@@ -20,5 +20,3 @@ const marginStyle = (props: MarginType) => {
 
   return styleString;
 };
-
-export { marginStyle };

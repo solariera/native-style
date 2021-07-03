@@ -6,7 +6,7 @@ type ImagePositionType = {
   unit?: number;
 };
 
-const imagePositionStyle = (props: ImagePositionType) => {
+export const imagePositionStyle = (props: ImagePositionType) => {
   const { x, y, unit = 'px' } = props;
 
   if (x && y)
@@ -27,5 +27,3 @@ const imagePositionStyle = (props: ImagePositionType) => {
 
   return css``;
 };
-
-export { imagePositionStyle };

@@ -5,7 +5,7 @@ type LetterSpacingType = {
   unit?: string;
 };
 
-const letterSpacingStyle = (props: LetterSpacingType) => {
+export const letterSpacingStyle = (props: LetterSpacingType) => {
   const { letterSpacing, unit = 'px' } = props;
 
   const styleString = css`
@@ -14,5 +14,3 @@ const letterSpacingStyle = (props: LetterSpacingType) => {
 
   return styleString;
 };
-
-export { letterSpacingStyle };

@@ -6,7 +6,7 @@ type FontSizeType = {
   unit?: string;
 };
 
-const fontSizeStyle = (props: FontSizeType) => {
+export const fontSizeStyle = (props: FontSizeType) => {
   const { fontWeight = 400, fontSize = 0.7, unit = 'px' } = props;
 
   const styleString = css`
@@ -16,5 +16,3 @@ const fontSizeStyle = (props: FontSizeType) => {
 
   return styleString;
 };
-
-export { fontSizeStyle };

@@ -6,7 +6,7 @@ type PlacementType = {
   unit?: string;
 };
 
-const placementStyle = (props: PlacementType) => {
+export const placementStyle = (props: PlacementType) => {
   const { height, textAlign = 'left', unit = 'px' } = props;
 
   const styleString = css`
@@ -16,5 +16,3 @@ const placementStyle = (props: PlacementType) => {
 
   return styleString;
 };
-
-export { placementStyle };

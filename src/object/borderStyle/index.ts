@@ -31,7 +31,7 @@ type BorderType = {
   unit?: string;
 };
 
-const borderStyle = (props: BorderType) => {
+export const borderStyle = (props: BorderType) => {
   const { borderColor, borderColorAlpha, borderStyle } = props;
   const { borderLeft, borderRight, borderTop, borderBottom } = props;
   const { borderWidth = 0, unit = 'px' } = props;
@@ -55,5 +55,3 @@ const borderStyle = (props: BorderType) => {
 
   return styleString;
 };
-
-export { borderStyle };

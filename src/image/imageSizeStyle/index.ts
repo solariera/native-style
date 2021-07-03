@@ -24,7 +24,7 @@ type ImageSizeType = {
   unit?: string;
 };
 
-const imageSizeStyle = (props: ImageSizeType) => {
+export const imageSizeStyle = (props: ImageSizeType) => {
   const { width, height, unit = 'px' } = props;
 
   const contain = 'contain' as const;
@@ -68,5 +68,3 @@ const imageSizeStyle = (props: ImageSizeType) => {
   // どちらも有効でない場合は、空を返す
   return css``;
 };
-
-export { imageSizeStyle };

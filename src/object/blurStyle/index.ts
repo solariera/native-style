@@ -5,7 +5,7 @@ type BlurType = {
   unit?: string;
 };
 
-const blurStyle = (props: BlurType) => {
+export const blurStyle = (props: BlurType) => {
   const { blur, unit = 'px' } = props;
 
   if (blur === undefined) return css``;
@@ -16,5 +16,3 @@ const blurStyle = (props: BlurType) => {
 
   return styleString;
 };
-
-export { blurStyle };

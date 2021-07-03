@@ -5,7 +5,7 @@ type RoundType = {
   unit?: number;
 };
 
-const roundStyle = (props: RoundType) => {
+export const roundStyle = (props: RoundType) => {
   const { roundSize = 0, unit = 'px' } = props;
   // 角丸サイズが存在し、長さ4の配列であれば角丸サイズを細かく指定する
   if (Array.isArray(roundSize) && roundSize.length === 4) {
@@ -32,5 +32,3 @@ const roundStyle = (props: RoundType) => {
 
   return styleString;
 };
-
-export { roundStyle };

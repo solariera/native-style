@@ -8,7 +8,7 @@ type PaddingType = {
   unit?: string;
 };
 
-const paddingStyle = (props: PaddingType) => {
+export const paddingStyle = (props: PaddingType) => {
   const { paddingLeft, paddingRight, paddingTop, paddingBottom, unit = 'px' } = props;
 
   const styleString = css`
@@ -20,5 +20,3 @@ const paddingStyle = (props: PaddingType) => {
 
   return styleString;
 };
-
-export { paddingStyle };

@@ -5,7 +5,7 @@ type FontFamilyType = {
   fontStyle?: string;
 };
 
-const fontFamilyStyle = (props: FontFamilyType) => {
+export const fontFamilyStyle = (props: FontFamilyType) => {
   const { fontFamily = 'Ubuntu', fontStyle = 'normal' } = props;
 
   const styleString = css`
@@ -15,5 +15,3 @@ const fontFamilyStyle = (props: FontFamilyType) => {
 
   return styleString;
 };
-
-export { fontFamilyStyle };

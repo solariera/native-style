@@ -4,7 +4,7 @@ type OpacityType = {
   opacity?: number;
 };
 
-const opacityStyle = (props: OpacityType) => {
+export const opacityStyle = (props: OpacityType) => {
   const { opacity } = props;
 
   if (opacity === undefined) return css``;
@@ -15,5 +15,3 @@ const opacityStyle = (props: OpacityType) => {
 
   return styleString;
 };
-
-export { opacityStyle };

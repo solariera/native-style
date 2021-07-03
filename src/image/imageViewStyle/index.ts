@@ -26,7 +26,7 @@ type ImageViewType = {
   repeat?: string;
 };
 
-const imageViewStyle = (props: ImageViewType) => {
+export const imageViewStyle = (props: ImageViewType) => {
   const { base64, repeat } = props;
 
   const mode = getBackgroundRepeatMode(repeat);
@@ -41,5 +41,3 @@ const imageViewStyle = (props: ImageViewType) => {
     background-image: url(${base64});
   `;
 };
-
-export { imageViewStyle };

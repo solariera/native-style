@@ -6,7 +6,7 @@ type FontColorType = {
   fontColorAlpha?: number;
 };
 
-const fontColorStyle = (props: FontColorType) => {
+export const fontColorStyle = (props: FontColorType) => {
   const { fontColor = '#000000', fontColorAlpha = 1 } = props;
 
   /**
@@ -20,5 +20,3 @@ const fontColorStyle = (props: FontColorType) => {
 
   return styleString;
 };
-
-export { fontColorStyle };

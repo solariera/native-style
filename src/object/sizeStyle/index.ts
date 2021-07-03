@@ -6,7 +6,7 @@ type SizeType = {
   unit?: string;
 };
 
-const sizeStyle = (props: SizeType) => {
+export const sizeStyle = (props: SizeType) => {
   const { width, height, unit = 'px' } = props;
 
   const styleString = css`
@@ -16,5 +16,3 @@ const sizeStyle = (props: SizeType) => {
 
   return styleString;
 };
-
-export { sizeStyle };

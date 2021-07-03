@@ -8,7 +8,7 @@ type PositionType = {
   unit?: string;
 };
 
-const positionStyle = (props: PositionType) => {
+export const positionStyle = (props: PositionType) => {
   const { left, right, top, bottom, unit = 'px' } = props;
 
   if ([left, right, top, bottom].every((pos) => pos === undefined)) return css``;
@@ -23,5 +23,3 @@ const positionStyle = (props: PositionType) => {
 
   return styleString;
 };
-
-export { positionStyle };
