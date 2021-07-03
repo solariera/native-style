@@ -1,85 +1,7 @@
 import { css } from '~/css';
-
-type AlignContentType = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'stretch';
-
-const getAlignContent = (align?: string): AlignContentType | undefined => {
-  switch (align) {
-    case 'flex-start':
-      return 'flex-start' as const;
-
-    case 'flex-end':
-      return 'flex-end' as const;
-
-    case 'center':
-      return 'center' as const;
-
-    case 'space-between':
-      return 'space-between' as const;
-
-    case 'space-around':
-      return 'space-around' as const;
-
-    case 'stretch':
-      return 'stretch' as const;
-
-    default:
-      return undefined;
-  }
-};
-
-type AlignItemType = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
-
-const getAlignItems = (align?: string): AlignItemType | undefined => {
-  switch (align) {
-    case 'flex-start': {
-      return 'flex-start' as const;
-    }
-
-    case 'flex-end': {
-      return 'flex-end' as const;
-    }
-
-    case 'center': {
-      return 'center' as const;
-    }
-
-    case 'baseline': {
-      return 'baseline' as const;
-    }
-
-    case 'stretch': {
-      return 'stretch' as const;
-    }
-
-    default: {
-      return undefined;
-    }
-  }
-};
-
-type JustifyContentType = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around';
-
-const getJustifyContent = (justify?: string): JustifyContentType | undefined => {
-  switch (justify) {
-    case 'flex-start':
-      return 'flex-start' as const;
-
-    case 'flex-end':
-      return 'flex-end' as const;
-
-    case 'center':
-      return 'center' as const;
-
-    case 'space-between':
-      return 'space-between' as const;
-
-    case 'space-around':
-      return 'space-around' as const;
-
-    default:
-      return undefined;
-  }
-};
+import { getJustifyContent } from './getJustifyContent';
+import { getAlignContent } from './getAlignContent';
+import { getAlignItems } from './getAlignItems';
 
 type FlexContainerType = {
   justifyContent?: string;
@@ -98,12 +20,12 @@ const flexContainerStyle = (props: FlexContainerType) => {
   const { justifyContent, alignContent, alignItems } = props;
 
   /**
-   * justify-contentの値
+   * justify-content
    */
   const justify = getJustifyContent(justifyContent);
 
   /**
-   * align-contentの値
+   * align-content
    */
   const align = getAlignContent(alignContent);
 

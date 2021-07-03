@@ -1,43 +1,6 @@
 import { css } from '~/css';
-
-type FlexDirectionType = 'row' | 'row-reverse' | 'column' | 'column-reverse';
-
-const getFlexDirection = (direction?: string): FlexDirectionType | undefined => {
-  switch (direction) {
-    case 'row':
-      return 'row' as const;
-
-    case 'row-reverse':
-      return 'row-reverse' as const;
-
-    case 'column':
-      return 'column' as const;
-
-    case 'column-reverse':
-      return 'column-reverse' as const;
-
-    default:
-      return undefined;
-  }
-};
-
-type FlexWrapType = 'nowrap' | 'wrap' | 'wrap-reverse';
-
-const getFlexWrap = (wrap?: string): FlexWrapType | undefined => {
-  switch (wrap) {
-    case 'nowrap':
-      return 'nowrap' as const;
-
-    case 'wrap':
-      return 'wrap' as const;
-
-    case 'wrap-reverse':
-      return 'wrap-reverse' as const;
-
-    default:
-      return undefined;
-  }
-};
+import { getFlexDirection } from './getFlexDirection';
+import { getFlexWrap } from './getFlexWrap';
 
 type FlexBasicType = {
   flexDirection?: string;
