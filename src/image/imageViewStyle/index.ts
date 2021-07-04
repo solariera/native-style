@@ -1,4 +1,4 @@
-import { css } from '~/css';
+import { css } from '../../css';
 import { getBackgroundRepeatMode } from './getBackgroundRepeatMode';
 
 type ImageViewType = {

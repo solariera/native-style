@@ -1,4 +1,4 @@
-import { css } from '~/css';
+import { css } from '../../css';
 import { getBackgroundSizingMode } from './getBackgroundSizingMode';
 
 type ImageSizeType = {

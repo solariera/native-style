@@ -1,5 +1,5 @@
 import { rgba } from '@solariera/rgba-syntax';
-import { css } from '~/css';
+import { css } from '../../css';
 import { getBorderStyle } from './getBorderStyle';
 
 type BorderType = {

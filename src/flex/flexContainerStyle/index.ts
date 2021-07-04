@@ -1,4 +1,4 @@
-import { css } from '~/css';
+import { css } from '../../css';
 import { getJustifyContent } from './getJustifyContent';
 import { getAlignContent } from './getAlignContent';
 import { getAlignItems } from './getAlignItems';
