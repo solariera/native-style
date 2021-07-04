@@ -1,6 +1,6 @@
 {
   "name": "@solariera/native-style",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Style functions for ReactNative",
   "author": "Solariera <always@solariera.com> (https://github.com/solariera)",
   "license": "MIT",
