@@ -6,10 +6,10 @@ type FontFamilyType = {
 };
 
 export const fontFamilyStyle = (props: FontFamilyType) => {
-  const { fontFamily = 'Ubuntu', fontStyle = 'normal' } = props;
+  const { fontFamily, fontStyle = 'normal' } = props;
 
   const styleString = css`
-    font-family: ${fontFamily};
+    ${fontFamily !== undefined && `font-family: ${fontFamily};`}
     font-style: ${fontStyle};
   `;
 
