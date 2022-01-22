@@ -16,7 +16,7 @@ type FlexContainerType = {
  * @param align 縦方向にitemをどのように配置していくかを指定
  * @param items itemsの縦方向の整列を指定
  */
-const flexContainerStyle = (props: FlexContainerType) => {
+export const flexContainerStyle = (props: FlexContainerType) => {
   const { justifyContent, alignContent, alignItems } = props;
 
   /**
@@ -42,5 +42,3 @@ const flexContainerStyle = (props: FlexContainerType) => {
 
   return styleString;
 };
-
-export { flexContainerStyle };

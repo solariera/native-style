@@ -1,6 +1,7 @@
 import { css } from '../../css';
 
 type PositionType = {
+  position?: string;
   left?: number;
   right?: number;
   top?: number;
@@ -9,12 +10,12 @@ type PositionType = {
 };
 
 export const positionStyle = (props: PositionType) => {
-  const { left, right, top, bottom, unit = 'px' } = props;
+  const { position = 'absolute', left, right, top, bottom, unit = 'px' } = props;
 
   if ([left, right, top, bottom].every((pos) => pos === undefined)) return css``;
 
   const styleString = css`
-    position: absolute;
+    position: ${position};
     ${left !== undefined && `left: ${left + unit};`}
     ${right !== undefined && `right: ${right + unit};`}
     ${top !== undefined && `top: ${top + unit};`}

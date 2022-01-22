@@ -2,7 +2,7 @@ import { css } from '../../css';
 
 type RoundType = {
   roundSize?: number | number[];
-  unit?: number;
+  unit?: string;
 };
 
 export const roundStyle = (props: RoundType) => {

@@ -3,35 +3,33 @@ import { getAlignSelf } from './getAlignSelf';
 import { getFlexBasis } from './getFlexBasis';
 
 type FlexItemsType = {
-  flexItemGrow?: number;
-  flexItemShrink?: number;
-  flexItemBasis?: string | number;
-  flexItemAlign?: string;
-  flexItemOrder?: number;
+  flexGrow?: number;
+  flexShrink?: number;
+  flexBasis?: string | number;
+  alignSelf?: string;
+  order?: number;
 };
 
-const flexItemsStyle = (props: FlexItemsType) => {
-  const { flexItemGrow, flexItemShrink, flexItemBasis, flexItemAlign, flexItemOrder } = props;
+export const flexItemsStyle = (props: FlexItemsType) => {
+  const { flexGrow, flexShrink, flexBasis, alignSelf, order } = props;
 
   /**
    * flex-basisの値を取得する
    */
-  const flexBasis = getFlexBasis(flexItemBasis);
+  const flexItemBasis = getFlexBasis(flexBasis);
 
   /**
    * align-selfの値を取得する
    */
-  const alignSelf = getAlignSelf(flexItemAlign);
+  const flexItemAlign = getAlignSelf(alignSelf);
 
   const styleString = css`
-    ${flexItemGrow !== undefined ? `flex-grow: ${flexItemGrow};` : ``}
-    ${flexItemShrink !== undefined ? `flex-shrink: ${flexItemShrink};` : ``}
-    ${flexBasis !== undefined ? `flex-basis: ${flexBasis};` : ``}
-    ${alignSelf !== undefined ? `align-self: ${alignSelf};` : ``}
-    ${flexItemOrder !== undefined ? `order: ${flexItemOrder};` : ``}
+    ${flexGrow !== undefined ? `flex-grow: ${flexGrow};` : ``}
+    ${flexShrink !== undefined ? `flex-shrink: ${flexShrink};` : ``}
+    ${flexItemBasis !== undefined ? `flex-basis: ${flexItemBasis};` : ``}
+    ${flexItemAlign !== undefined ? `align-self: ${flexItemAlign};` : ``}
+    ${order !== undefined ? `order: ${order};` : ``}
   `;
 
   return styleString;
 };
-
-export { flexItemsStyle };

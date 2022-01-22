@@ -27,13 +27,13 @@ export const borderStyle = (props: BorderType) => {
 
   const styleString = [borderLeft, borderRight, borderTop, borderBottom].some((enable) => enable)
     ? css`
-        border: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};
-      `
-    : css`
         ${borderLeft && `border-left: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
         ${borderRight && `border-right: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
         ${borderTop && `border-top: ${borderWidth + unit} ${type} ${rgba};`}
         ${borderBottom && `border-bottom: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};`}
+      `
+    : css`
+        border: ${borderWidth + unit} ${borderStyle} ${rgbaSyntax};
       `;
 
   return styleString;

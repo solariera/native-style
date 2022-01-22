@@ -6,7 +6,7 @@ type ColorType = {
   bgColorAlpha?: number;
 };
 
-export const colorStyle = (props: ColorType) => {
+export const bgColorStyle = (props: ColorType) => {
   const { bgColor, bgColorAlpha = 1 } = props;
 
   if (bgColor === undefined) return css``;

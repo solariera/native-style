@@ -3,7 +3,7 @@ import { css } from '../../css';
 type ImagePositionType = {
   x?: number;
   y?: number;
-  unit?: number;
+  unit?: string;
 };
 
 export const imagePositionStyle = (props: ImagePositionType) => {

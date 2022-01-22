@@ -2,7 +2,7 @@ import { css } from '../../css';
 import { getBackgroundSizingMode } from './getBackgroundSizingMode';
 
 type ImageSizeType = {
-  width: number | string;
+  width?: number | string;
   height?: number | string;
   unit?: string;
 };

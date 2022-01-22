@@ -5,10 +5,11 @@ type StrokeType = {
   strokeWidth?: number;
   strokeColor?: string;
   strokeColorAlpha?: number;
+  unit?: string;
 };
 
 export const textStrokeStyle = (props: StrokeType) => {
-  const { strokeWidth, strokeColor, strokeColorAlpha } = props;
+  const { strokeWidth, strokeColor, strokeColorAlpha, unit = 'px' } = props;
 
   /**
    * ストロークカラーのrgba形式
@@ -16,7 +17,7 @@ export const textStrokeStyle = (props: StrokeType) => {
   const textStrokeColor: string | undefined = strokeColor && rgba(strokeColor, strokeColorAlpha);
 
   const styleString = css`
-    ${strokeWidth !== undefined ? `text-stroke-width: ${strokeWidth};` : ``}
+    ${strokeWidth !== undefined ? `text-stroke-width: ${strokeWidth + unit};` : ``}
     ${textStrokeColor !== undefined ? `text-stroke-color: ${textStrokeColor};` : ``}
   `;
 

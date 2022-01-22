@@ -1,18 +1,24 @@
 import { css } from '../../css';
+import { getDisplay } from './getDisplay';
 import { getFlexDirection } from './getFlexDirection';
 import { getFlexWrap } from './getFlexWrap';
 
 type FlexBasicType = {
+  display?: string;
   flexDirection?: string;
   flexWrap?: string;
-  styleDisplay?: string;
 };
 
 export const flexBasicStyle = (props: FlexBasicType) => {
-  const { flexDirection, flexWrap, styleDisplay = 'flex' } = props;
+  const { display, flexDirection, flexWrap } = props;
 
-  // directionとwrapが存在しなければ何もしない
-  if (!flexDirection && !flexWrap) return css``;
+  // displayとdirectionとwrapが存在しなければ何もしない
+  if (!display && !flexDirection && !flexWrap) return css``;
+
+  /**
+   * displayの値
+   */
+  const displayType = getDisplay(display) || 'flex';
 
   /**
    * flex-directionの値
@@ -25,7 +31,7 @@ export const flexBasicStyle = (props: FlexBasicType) => {
   const wrap = getFlexWrap(flexWrap);
 
   const styleString = css`
-    ${styleDisplay !== undefined ? `display: ${styleDisplay};` : ``}
+    ${displayType !== undefined ? `display: ${displayType};` : ``}
     ${direction !== undefined ? `flex-direction: ${direction};` : ``}
     ${wrap !== undefined ? `flex-wrap: ${wrap};` : ``}
   `;
