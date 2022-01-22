@@ -10,5 +10,5 @@ declare type FlexContainerType = {
  * @param align 縦方向にitemをどのように配置していくかを指定
  * @param items itemsの縦方向の整列を指定
  */
-declare const flexContainerStyle: (props: FlexContainerType) => import("styled-components").FlattenSimpleInterpolation;
-export { flexContainerStyle };
+export declare const flexContainerStyle: (props: FlexContainerType) => import("styled-components").FlattenSimpleInterpolation;
+export {};

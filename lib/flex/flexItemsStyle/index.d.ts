@@ -1,9 +1,9 @@
 declare type FlexItemsType = {
-    flexItemGrow?: number;
-    flexItemShrink?: number;
-    flexItemBasis?: string | number;
-    flexItemAlign?: string;
-    flexItemOrder?: number;
+    flexGrow?: number;
+    flexShrink?: number;
+    flexBasis?: string | number;
+    alignSelf?: string;
+    order?: number;
 };
-declare const flexItemsStyle: (props: FlexItemsType) => import("styled-components").FlattenSimpleInterpolation;
-export { flexItemsStyle };
+export declare const flexItemsStyle: (props: FlexItemsType) => import("styled-components").FlattenSimpleInterpolation;
+export {};

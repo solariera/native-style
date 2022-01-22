@@ -1,4 +1,5 @@
 declare type PositionType = {
+    position?: string;
     left?: number;
     right?: number;
     top?: number;
